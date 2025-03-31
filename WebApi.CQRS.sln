@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.CQRS.Application", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.CQRS.Infrastructure", "WebApi.CQRS.Infrastructure\WebApi.CQRS.Infrastructure.csproj", "{5C71AABC-0297-4CA8-99E8-6EC0E9F941FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.CQRS.Common", "WebApi.CQRS.Common\WebApi.CQRS.Common.csproj", "{32D63BAB-C410-442C-BB40-11673F1A9DF7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{5C71AABC-0297-4CA8-99E8-6EC0E9F941FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C71AABC-0297-4CA8-99E8-6EC0E9F941FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C71AABC-0297-4CA8-99E8-6EC0E9F941FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32D63BAB-C410-442C-BB40-11673F1A9DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32D63BAB-C410-442C-BB40-11673F1A9DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32D63BAB-C410-442C-BB40-11673F1A9DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32D63BAB-C410-442C-BB40-11673F1A9DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
