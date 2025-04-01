@@ -7,34 +7,55 @@ namespace WebApi.CQRS.Domain.Repositories;
 /// </summary>
 public interface IBookingRepository
 {
-    /// <summary>
-    /// Получить бронь по идентификатору
-    /// </summary>
-    /// <param name="id">Идентификатор брони</param>
-    /// <returns>Бронь или null, если не найдена</returns>
-    Task<BookingModel?> GetByIdAsync(Guid id);
-    
-    /// <summary>
-    /// Получить все будущие брони для указанной комнаты
-    /// </summary>
-    /// <param name="roomId">Идентификатор комнаты</param>
-    /// <returns>Список будущих бронирований</returns>
-    Task<IEnumerable<BookingModel>> GetFutureBookingsByRoomAsync(Guid roomId);
-    
+    #region Create
     /// <summary>
     /// Добавить новую бронь
     /// </summary>
     /// <param name="booking">Экземпляр бронирования</param>
-    Task AddAsync(BookingModel booking);
-    
+    /// <param name="cancellationToken">Токен отмены операции</param>
+    Task AddAsync(BookingModel booking, CancellationToken cancellationToken);
+    #endregion
+
+    #region Read
+    /// <summary>
+    /// Получить бронь по идентификатору
+    /// </summary>
+    /// <param name="id">Идентификатор брони</param>
+    /// <param name="cancellationToken">Токен отмены операции</param>
+    /// <returns>Бронь или null, если не найдена</returns>
+    Task<BookingModel?> GetByIdAsync(Guid id, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Получить все будущие брони для указанной комнаты
+    /// </summary>
+    /// <param name="roomId">Идентификатор комнаты</param>
+    /// <param name="cancellationToken">Токен отмены операции</param>
+    /// <returns>Список будущих бронирований</returns>
+    Task<IEnumerable<BookingModel>> GetFutureBookingsByRoomAsync(Guid roomId, CancellationToken cancellationToken);
+    #endregion
+
+    #region Update
+    /// <summary>
+    /// Обновить данные брони
+    /// </summary>
+    /// <param name="booking">Экземпляр бронирования</param>
+    /// <param name="cancellationToken">Токен отмены операции</param>
+    /// <returns>Список будущих бронирований</returns>
+    Task UpdateAsync(BookingModel booking, CancellationToken cancellationToken);
+    #endregion
+
+    #region Delete
     /// <summary>
     /// Удалить бронь
     /// </summary>
     /// <param name="booking">Экземпляр бронирования</param>
-    Task DeleteAsync(BookingModel booking);
-    
+    /// <param name="cancellationToken">Токен отмены операции</param>
+    Task DeleteAsync(BookingModel booking, CancellationToken cancellationToken);
+    #endregion
+
     /// <summary>
     /// Сохранить изменения в хранилище.
     /// </summary>
-    Task SaveChangesAsync();
+    /// <param name="cancellationToken">Токен отмены операции</param>
+    Task SaveChangesAsync(CancellationToken cancellationToken);
 }
