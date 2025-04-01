@@ -64,14 +64,14 @@ public class UserModel
     /// </summary>
     [Required]
     [StringLength(100)]
-    public string FullName { get; set; } = null!;
+    public string FullName { get; set; }
 
     /// <summary>
     /// Email пользователя (используется для уведомлений и входа)
     /// </summary>
     [Required]
     [EmailAddress]
-    public string Email { get; set; } = null!;
+    public string Email { get; set; }
 
     /// <summary>
     /// Название отдела (опционально)

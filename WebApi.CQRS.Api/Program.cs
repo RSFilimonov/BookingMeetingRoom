@@ -1,4 +1,6 @@
 using NLog.Web;
+using WebApi.CQRS.Infrastructure;
+using WebApi.CQRS.Infrastructure.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,16 +8,22 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders(); // Отключаем стандартные провайдеры
 builder.Host.UseNLog(); // Включаем NLog
 
+builder.Services.AddPersistence(builder.Configuration);
+
+
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
+// builder.Services.Open();
 
 var app = builder.Build();
+
+// Использование инфраструктурных сервисов
+app.UseInfrastructureServices();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
+    // app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();

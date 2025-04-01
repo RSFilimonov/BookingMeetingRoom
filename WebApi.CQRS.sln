@@ -10,6 +10,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.CQRS.Infrastructure"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.CQRS.Common", "WebApi.CQRS.Common\WebApi.CQRS.Common.csproj", "{32D63BAB-C410-442C-BB40-11673F1A9DF7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution items", "Solution items", "{E16A0B5C-4754-4543-AC14-0C1DFA66D292}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitignore = .gitignore
+		global.json = global.json
+		WebApi.CQRS.sln.DotSettings.user = WebApi.CQRS.sln.DotSettings.user
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

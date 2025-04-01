@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using WebApi.CQRS.Common.ValidationAttributes;
 using WebApi.CQRS.Domain.Enums;
@@ -98,15 +99,18 @@ public class BookingModel
     /// <summary>
     /// Текущий статус бронирования
     /// </summary>
+    [Range(1, 4)]
     public BookingStatus Status { get; set; }
 
     /// <summary>
     /// Навигационное свойство забронированной комнаты для переговоров
     /// </summary>
+    [ForeignKey(nameof(RoomId))]
     public RoomModel Room { get; set; } = null!;
 
     /// <summary>
     /// Навигационное свойство для пользователя
     /// </summary>
+    [ForeignKey(nameof(UserId))]
     public UserModel User { get; set; } = null!;
 }
