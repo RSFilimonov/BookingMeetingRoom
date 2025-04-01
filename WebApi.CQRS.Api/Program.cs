@@ -8,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Logging.ClearProviders(); // Отключаем стандартные провайдеры
 builder.Host.UseNLog(); // Включаем NLog
 
+builder.Services.AddInfrastructureServices(builder.Configuration);
+
 builder.Services.AddPersistence(builder.Configuration);
 
 
