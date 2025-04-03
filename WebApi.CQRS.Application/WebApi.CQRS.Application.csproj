@@ -11,4 +11,8 @@
       <ProjectReference Include="..\WebApi.CQRS.Infrastructure\WebApi.CQRS.Infrastructure.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="MediatR" Version="12.5.0" />
+    </ItemGroup>
+
 </Project>
