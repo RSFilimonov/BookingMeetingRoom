@@ -32,7 +32,7 @@ public class RoomModel
     /// <param name="location">Местоположение комнаты</param>
     /// <returns>Экземпляр модели комнаты для переговоров</returns>
     /// <exception cref="ValidationException">Модель не прошла валидацию с заданными параметрами</exception>
-    public RoomModel CreateRoomModel(Guid id, string name, int capacity, string location)
+    public static RoomModel CreateRoomModel(Guid id, string name, int capacity, string location)
     {
         RoomModel model = new RoomModel(id, name, capacity, location);
         ValidationContext context = new ValidationContext(model);

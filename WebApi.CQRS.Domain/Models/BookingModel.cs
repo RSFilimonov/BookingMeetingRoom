@@ -41,7 +41,7 @@ public class BookingModel
     /// <param name="status">Статус бронирования</param>
     /// <returns>Экземпляр модели бронирования</returns>
     /// <exception cref="ValidationException">Модель не прошла валидацию с заданными параметрами</exception>
-    public BookingModel CreateBookingModel(Guid id, Guid roomId, Guid userId, DateTime startTime, DateTime endTime, BookingStatus status)
+    public static BookingModel CreateBookingModel(Guid id, Guid roomId, Guid userId, DateTime startTime, DateTime endTime, BookingStatus status)
     {
         BookingModel model = new BookingModel(id, roomId, userId, startTime, endTime, status);
         ValidationContext context = new ValidationContext(model);

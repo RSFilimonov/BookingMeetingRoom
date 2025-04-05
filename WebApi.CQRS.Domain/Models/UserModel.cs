@@ -32,7 +32,7 @@ public class UserModel
     /// <param name="department">Название отдела</param>
     /// <returns>Экземпляр модели пользователя</returns>
     /// <exception cref="ValidationException">Модель не прошла валидацию с заданными параметрами</exception>
-    public UserModel CreateUserModel(Guid id, string fullName, string email, string? department)
+    public static UserModel CreateUserModel(Guid id, string fullName, string email, string? department)
     {
         UserModel model = new UserModel(id, fullName, email, department);
         ValidationContext context = new ValidationContext(model);
