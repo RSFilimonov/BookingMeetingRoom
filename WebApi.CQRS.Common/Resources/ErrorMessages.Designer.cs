@@ -123,6 +123,24 @@ namespace WebApi.CQRS.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to User with id: \&quot;{0}\&quot; was not found.
+        /// </summary>
+        public static string UserNotFoundByEmail {
+            get {
+                return ResourceManager.GetString("UserNotFoundByEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User with id: \&quot;{0}\&quot; was not found.
+        /// </summary>
+        public static string UserNotFoundById {
+            get {
+                return ResourceManager.GetString("UserNotFoundById", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The field \&quot;{0}\&quot; was not validated.
         /// </summary>
         public static string ValidationFailed {

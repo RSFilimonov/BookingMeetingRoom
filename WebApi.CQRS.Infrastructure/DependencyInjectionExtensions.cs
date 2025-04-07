@@ -27,7 +27,7 @@ public static class DependencyInjectionExtensions
     /// </summary>
     private static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        services.AddTransient<IUserModelRepository, UserRepository>();
+        services.AddTransient<IUserRepository, UserRepository>();
         services.AddTransient<IRoomRepository, RoomRepository>();
         services.AddTransient<IBookingRepository, BookingRepository>();
         

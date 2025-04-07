@@ -1,10 +1,33 @@
+using WebApi.CQRS.Domain.Models;
+
 namespace WebApi.CQRS.Application.Models;
 
 /// <summary>
 /// Data transfer object 
 /// </summary>
-/// <param name="Id">Уникальный идентификатор пользователя</param>
-/// <param name="FullName">Полное имя пользователя</param>
-/// <param name="Email">Email пользователя</param>
-/// <param name="Department">Название отдела</param>
-public record UserDto(Guid Id, string FullName, string Email, string? Department);
+public record UserDto
+{
+    /// <summary>
+    /// Data transfer object 
+    /// </summary>
+    /// <param name="user">Экземпляр класса модели пользователя</param>
+    public UserDto(UserModel user)
+    {
+        Id = user.Id;
+        FullName = user.FullName;
+        Email = user.Email;
+        Department = user.Department;
+    }
+
+    /// <summary>Уникальный идентификатор пользователя</summary>
+    public Guid Id { get; init; }
+
+    /// <summary>Полное имя пользователя</summary>
+    public string FullName { get; init; }
+
+    /// <summary>Email пользователя</summary>
+    public string Email { get; init; }
+
+    /// <summary>Название отдела</summary>
+    public string? Department { get; init; }
+}

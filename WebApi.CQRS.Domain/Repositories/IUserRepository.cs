@@ -5,7 +5,7 @@ namespace WebApi.CQRS.Domain.Repositories;
 /// <summary>
 /// Репозиторий для управления пользователями
 /// </summary>
-public interface IUserModelRepository
+public interface IUserRepository
 {
     #region Create
     /// <summary>

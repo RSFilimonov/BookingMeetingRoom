@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using MediatR;
+using WebApi.CQRS.Common;
 
 namespace WebApi.CQRS.Application.UseCases.Users.Commands;
 
@@ -11,7 +12,7 @@ namespace WebApi.CQRS.Application.UseCases.Users.Commands;
 /// <param name="email">Email пользователя</param>
 /// <param name="department">Название отдела</param>
 /// <returns>Результат успешности операции</returns>
-public class UpdateUserCommand(Guid userId, string? fullName, string? email, string? department) : IRequest<bool>
+public class UpdateUserCommand(Guid userId, string? fullName, string? email, string? department) : IRequest<Result>
 {
     [Required]
     public Guid UserId { get; } = userId;
