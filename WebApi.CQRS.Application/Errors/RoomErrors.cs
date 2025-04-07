@@ -7,5 +7,5 @@ namespace WebApi.CQRS.Application.Errors;
 public static class RoomErrors
 {
     public static Error RoomNotFound(string roomId) =>
-        new(HttpStatusCode.NotFound, String.Format(ErrorMessages.BookingNotFound, roomId));
+        new(HttpStatusCode.NotFound, String.Format(ErrorMessages.RoomNotFound, roomId));
 }
