@@ -4,7 +4,7 @@ using WebApi.CQRS.Domain.Repositories;
 
 namespace WebApi.CQRS.Infrastructure.DataAccess.Repositories;
 
-public class UserModelRepository(AppDbContext context) : IUserModelRepository
+public class UserRepository(AppDbContext context) : IUserModelRepository
 {
     #region Create
     public Task AddAsync(UserModel user, CancellationToken cancellationToken)

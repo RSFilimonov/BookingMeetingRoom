@@ -4,7 +4,7 @@ using WebApi.CQRS.Domain.Repositories;
 
 namespace WebApi.CQRS.Infrastructure.DataAccess.Repositories;
 
-public class RoomModelRepository(AppDbContext context) :  IRoomModelRepository
+public class RoomRepository(AppDbContext context) :  IRoomRepository
 {
     #region Create
     public Task AddAsync(RoomModel room, CancellationToken cancellationToken)

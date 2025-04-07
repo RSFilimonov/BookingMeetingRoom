@@ -5,7 +5,7 @@ namespace WebApi.CQRS.Domain.Repositories;
 /// <summary>
 /// Репозиторий для работы с переговорными комнатами
 /// </summary>
-public interface IRoomModelRepository
+public interface IRoomRepository
 {
     #region Create
 
