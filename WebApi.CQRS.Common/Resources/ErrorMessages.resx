@@ -21,4 +21,22 @@
     <data name="UnknownProperty" xml:space="preserve">
         <value>Unknown property: {0}</value>
     </data>
+    <data name="ValidationFailed" xml:space="preserve">
+        <value>The field \"{0}\" was not validated</value>
+    </data>
+    <data name="InternalServerError" xml:space="preserve">
+        <value>Internal server error</value>
+    </data>
+    <data name="EntityNotFound" xml:space="preserve">
+        <value>Entity with id: \"{0}\" was not found</value>
+    </data>
+    <data name="BookingNotFound" xml:space="preserve">
+        <value>Booking with id: \"{0}\" was not found</value>
+    </data>
+    <data name="BookingIsCancelledOrExpired" xml:space="preserve">
+        <value>Booking with id: \"{0}\" is cancelled or expired</value>
+    </data>
+    <data name="BookingIsNoActiveOrNoExpired" xml:space="preserve">
+        <value>Booking with id: \"{0}\" is not active or not expired</value>
+    </data>
 </root>

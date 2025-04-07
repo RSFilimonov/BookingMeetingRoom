@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using WebApi.CQRS.Domain.Enums;
 using WebApi.CQRS.Domain.Models;
 using WebApi.CQRS.Domain.Repositories;
 
@@ -23,10 +24,35 @@ public class BookingRepository(AppDbContext context) : IBookingRepository
         return await context.Bookings.AsNoTracking().FirstOrDefaultAsync(booking => booking.Id == id,  cancellationToken);
     }
 
-    public async Task<IEnumerable<BookingModel>> GetFutureBookingsByRoomAsync(Guid roomId, CancellationToken cancellationToken)
+    public async Task<IEnumerable<BookingModel>> GetBookingsByRoomAsync(Guid roomId, CancellationToken cancellationToken)
     {
         return await context.Bookings.AsNoTracking()
-            .Where(booking => booking.RoomId == roomId && booking.StartTime > DateTime.Now)
+            .Where(booking => booking.RoomId == roomId)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IEnumerable<BookingModel>> GetBookingsByUserAsync(Guid userId, CancellationToken cancellationToken)
+    {
+        return await context.Bookings.AsNoTracking()
+            .Where(booking => booking.UserId == userId)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IEnumerable<BookingModel>> GetExpiredBookingsAsync(CancellationToken  cancellationToken)
+    {
+        var now = DateTime.UtcNow;
+
+        return await context.Bookings.AsNoTracking()
+            .Where(b => b.EndTime < now && b.Status == BookingStatus.Confirmed)
+            .ToListAsync(cancellationToken);
+    }
+
+    public async Task<IEnumerable<BookingModel>> GetBookingsInRangeAsync(DateTime from, DateTime to, CancellationToken cancellationToken)
+    {
+        return await context.Bookings.AsNoTracking()
+            .Include(b => b.Room)
+            .Include(b => b.User)
+            .Where(b => b.StartTime < to && b.EndTime > from) // пересекаются с интервалом
             .ToListAsync(cancellationToken);
     }
     #endregion

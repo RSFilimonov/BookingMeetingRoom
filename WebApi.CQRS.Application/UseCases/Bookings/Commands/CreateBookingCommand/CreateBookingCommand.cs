@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using MediatR;
+using WebApi.CQRS.Common;
 using WebApi.CQRS.Common.ValidationAttributes;
 using WebApi.CQRS.Domain.Enums;
 
@@ -17,7 +18,7 @@ public class CreateBookingCommand(
     Guid roomId,
     Guid userId,
     DateTime startTime,
-    DateTime endTime) : IRequest<Guid>
+    DateTime endTime) : IRequest<Result<Guid>>
 {
     [Required]
     public Guid RoomId { get; init; } = roomId;

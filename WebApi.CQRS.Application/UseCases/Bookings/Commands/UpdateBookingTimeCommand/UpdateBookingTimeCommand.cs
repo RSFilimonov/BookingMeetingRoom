@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using MediatR;
+using WebApi.CQRS.Common;
 using WebApi.CQRS.Common.ValidationAttributes;
 
 namespace WebApi.CQRS.Application.UseCases.Bookings.Commands;
@@ -11,14 +12,14 @@ namespace WebApi.CQRS.Application.UseCases.Bookings.Commands;
 /// <param name="startTime">Новое время начала брони</param>
 /// <param name="endTime">Новое время конца брони</param>
 /// <returns>Результат успешности операции</returns>
-public class UpdateBookingTimeCommand(Guid  bookingId, DateTime startTime, DateTime endTime) : IRequest<bool>
+public class UpdateBookingTimeCommand(Guid bookingId, DateTime startTime, DateTime endTime) : IRequest<Result>
 {
     [Required]
-    Guid BookingId { get; init; } =  bookingId;
+    public Guid BookingId { get; init; } =  bookingId;
     
     [FutureDate]
-    DateTime StartTime { get; init; } =  startTime;
+    public DateTime StartTime { get; init; } =  startTime;
     
     [DateGreaterThan(nameof(StartTime))]
-    DateTime EndTime { get; init; } = endTime;
+    public DateTime EndTime { get; init; } = endTime;
 }

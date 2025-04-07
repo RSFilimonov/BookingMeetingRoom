@@ -31,7 +31,31 @@ public interface IBookingRepository
     /// <param name="roomId">Идентификатор комнаты</param>
     /// <param name="cancellationToken">Токен отмены операции</param>
     /// <returns>Список будущих бронирований</returns>
-    Task<IEnumerable<BookingModel>> GetFutureBookingsByRoomAsync(Guid roomId, CancellationToken cancellationToken);
+    Task<IEnumerable<BookingModel>> GetBookingsByRoomAsync(Guid roomId, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Получить все будущие брони для указанной комнаты
+    /// </summary>
+    /// <param name="userId">Идентификатор комнаты</param>
+    /// <param name="cancellationToken">Токен отмены операции</param>
+    /// <returns>Список будущих бронирований</returns>
+    Task<IEnumerable<BookingModel>> GetBookingsByUserAsync(Guid userId, CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Получить список всех истекших броней
+    /// </summary>
+    /// <param name="cancellationToken">Токен отмены операции</param>
+    /// <returns>Список всех истекших броней</returns>
+    Task<IEnumerable<BookingModel>> GetExpiredBookingsAsync(CancellationToken cancellationToken);
+
+    /// <summary>
+    /// Получить список всех броней в заданном промежутке времени
+    /// </summary>
+    /// <param name="from">От</param>
+    /// <param name="to">До</param>
+    /// <param name="cancellationToken">Токен отмены операции</param>
+    /// <returns>Список всех истекших броней</returns>
+    Task<IEnumerable<BookingModel>> GetBookingsInRangeAsync(DateTime from, DateTime to, CancellationToken cancellationToken);
     #endregion
 
     #region Update

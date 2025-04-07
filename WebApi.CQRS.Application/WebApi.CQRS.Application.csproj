@@ -8,11 +8,11 @@
 
     <ItemGroup>
       <ProjectReference Include="..\WebApi.CQRS.Domain\WebApi.CQRS.Domain.csproj" />
-      <ProjectReference Include="..\WebApi.CQRS.Infrastructure\WebApi.CQRS.Infrastructure.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <PackageReference Include="MediatR" Version="12.5.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
     </ItemGroup>
 
 </Project>

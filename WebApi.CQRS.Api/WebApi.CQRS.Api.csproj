@@ -35,6 +35,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\WebApi.CQRS.Application\WebApi.CQRS.Application.csproj" />
+      <ProjectReference Include="..\WebApi.CQRS.Infrastructure\WebApi.CQRS.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>
