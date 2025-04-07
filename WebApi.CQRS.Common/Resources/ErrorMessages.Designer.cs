@@ -105,6 +105,15 @@ namespace WebApi.CQRS.Common.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Room with id: \&quot;{0}\&quot; was not found.
+        /// </summary>
+        public static string RoomNotFound {
+            get {
+                return ResourceManager.GetString("RoomNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Unknown property: {0}.
         /// </summary>
         public static string UnknownProperty {

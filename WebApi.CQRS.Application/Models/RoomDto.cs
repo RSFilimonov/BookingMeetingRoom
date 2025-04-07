@@ -1,10 +1,29 @@
+using WebApi.CQRS.Domain.Models;
+
 namespace WebApi.CQRS.Application.Models;
 
 /// <summary>
 /// Data transfer object для возвращения данных о переговорной комнате
 /// </summary>
-/// <param name="Id">Id переговорной комнаты</param>
-/// <param name="Name">Название переговорной комнаты</param>
-/// <param name="Capacity">Вместимость переговорной комнаты</param>
-/// <param name="Location">Адрес переговорной комнаты</param>
-public record RoomDto(Guid Id, string Name, int Capacity, string Location);
+public record RoomDto
+{
+    /// <summary>
+    /// Data transfer object для возвращения данных о переговорной комнате
+    /// </summary>
+    /// <param name="room">Экземпляр модели переговорной комнаты</param>
+    public RoomDto(RoomModel room)
+    {
+        Id = room.Id;
+        Name = room.Name;
+        Capacity = room.Capacity;
+        Location = room.Location;
+    }
+
+    public Guid Id { get; init; }
+
+    public string Name { get; init; }
+
+    public int Capacity { get; init; }
+
+    public string Location { get; init; }
+}

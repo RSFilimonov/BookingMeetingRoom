@@ -33,6 +33,9 @@
     <data name="BookingNotFound" xml:space="preserve">
         <value>Booking with id: \"{0}\" was not found</value>
     </data>
+    <data name="RoomNotFound" xml:space="preserve">
+        <value>Room with id: \"{0}\" was not found</value>
+    </data>
     <data name="BookingIsCancelledOrExpired" xml:space="preserve">
         <value>Booking with id: \"{0}\" is cancelled or expired</value>
     </data>

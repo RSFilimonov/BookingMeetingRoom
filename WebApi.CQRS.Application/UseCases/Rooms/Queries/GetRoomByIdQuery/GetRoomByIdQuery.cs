@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using MediatR;
 using WebApi.CQRS.Application.Models;
+using WebApi.CQRS.Common;
 
 namespace WebApi.CQRS.Application.UseCases.Rooms.Queries;
 
@@ -9,7 +10,7 @@ namespace WebApi.CQRS.Application.UseCases.Rooms.Queries;
 /// </summary>
 /// <param name="roomId">Id переговорной комнаты</param>
 /// <returns>Данные о переговорной комнате</returns>
-public class GetRoomByIdQuery(Guid roomId) : IRequest<RoomDto>
+public class GetRoomByIdQuery(Guid roomId) : IRequest<Result<RoomDto>>
 {
     [Required]
     public Guid RoomId { get; init; } = roomId;
